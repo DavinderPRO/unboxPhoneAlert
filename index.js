@@ -12,10 +12,7 @@ let trackerList = {
     let phoneName = 'Realme X (Space Blue, 128 GB)';
     let searchIn = trackerList['unboxedPhone'];
     let allProducts = await getProducts(searchIn).catch(e => [])
-    let filteredProduct = allProducts.filter((v) => {
-        if (v.phoneName.includes(phoneName))
-            return v;
-    })
+    let filteredProduct = allProducts.filter(v => { if (v.phoneName.includes(phoneName)) return v; })
     console.log(JSON.stringify(filteredProduct, '', 2));
 })()
 
